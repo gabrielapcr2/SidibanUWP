@@ -1,0 +1,124 @@
+﻿<Page x:ConnectionId='1'
+    
+    x:Class="SidibanUWP.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SidibanUWP"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:x1="using:System"
+    xmlns:entity="using:Connection.Entities"
+    mc:Ignorable="d"
+     Width="800" Height="450">
+
+    <Grid>
+        <Grid Margin ="20" Background="White" >
+
+            <Rectangle HorizontalAlignment="Center" Height="270"
+                       Margin="0,87,0,0" Stroke="Black" 
+                       VerticalAlignment="Top" Width="168" 
+                       Fill="#FF8A068A" RadiusX="15" RadiusY="15"/>
+
+            <Rectangle HorizontalAlignment="Left" Height="270" 
+                       Margin="51,87,0,0" Stroke="Black"
+                       VerticalAlignment="Top" Width="167"
+                       Fill="#FF8A068A" RadiusX="15" RadiusY="15"/>
+
+
+            <Rectangle HorizontalAlignment="Left" Height="270"
+                       Margin="536,87,0,0" Stroke="Black" 
+                       VerticalAlignment="Top" Width="167" 
+                       Fill="#FF8A068A" RadiusX="15" RadiusY="15"/>
+
+            <Rectangle HorizontalAlignment="Center" Height="34"
+                       VerticalAlignment="Top" Width="760" 
+                       Fill="#FF8A068A" RadiusX="0" RadiusY="4"/>
+
+            <TextBlock HorizontalAlignment="Left" Margin="10,2,0,0"
+                       TextWrapping="Wrap" Text="SIDIBAN" 
+                       VerticalAlignment="Top" 
+                       FontSize="22" FontStyle="Italic" Padding="10,3,4,0"/>
+
+
+            <TextBox x:ConnectionId='4'  x:Name="TodoCard" HorizontalAlignment="Left" Margin="86,97,0,0" 
+                      TextWrapping="Wrap" Text="    TODO"
+                      VerticalAlignment="Top" Width="90" Height="24" FontSize="16"
+                      BorderBrush="MediumPurple" Background="MediumPurple" Padding="3,0,0,0"
+                      CornerRadius="1"/>
+
+
+            <TextBox x:ConnectionId='5' x:Name="DoingCard" HorizontalAlignment="Center" Margin="0,97,0,0" 
+                     TextWrapping="Wrap" Text="   DOING"
+                     VerticalAlignment="Top" Width="90" Height="24" FontSize="16" 
+                     BorderThickness="2,2,2,2" BorderBrush="MediumPurple" Background="MediumPurple" Padding="3,0,0,0" CornerRadius="1"/>
+
+
+            <TextBox x:ConnectionId='6' x:Name="DoneCard" HorizontalAlignment="Left" Margin="574,97,0,0"
+                     TextWrapping="Wrap" Text="    DONE"
+                     VerticalAlignment="Top" Width="90" Height="24" FontSize="16" 
+                     BorderThickness="2,2,2,2" BorderBrush="MediumPurple" Background="MediumPurple" Padding="3,0,0,0" CornerRadius="1"/>
+
+            <Button x:ConnectionId='7'  x:Name="back_uwp"                       
+                     Content="Home" Margin="678,39,0,0" VerticalAlignment="Top"
+                     Background="MediumPurple" Width="72"/>
+
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions >
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="160"/>
+                    <ColumnDefinition Width="19"/>
+
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions/>
+
+
+
+            </Grid>
+            <ListView x:ConnectionId='8'  HorizontalAlignment="Left" Margin="90,0,140,60" Height="80"  Width ="86" x:Name="Cards_list" Grid.Row="0"                             >
+
+                <ListView.ItemTemplate>
+                    <DataTemplate                         >
+                        <StackPanel x:ConnectionId='10' Orientation="Vertical">
+
+                            <ListViewItem x:ConnectionId='11' x:Name="Title_card"                          Height="10"/>
+                            <ListViewItem x:Name="Description_card" Content="{Binding Description}" Height="40"/>
+                            <Popup x:Name="MyPoupup" IsLightDismissEnabled="False" Height="30" Width="63">
+                                <StackPanel Background="MediumPurple">
+                                    <Button x:ConnectionId='14' x:Name="DeleteCard"                         >
+
+                                    </Button>
+                                    <Button x:ConnectionId='15' x:Name="EditCard"                       >
+
+                                    </Button>
+                                    <Button x:ConnectionId='16' x:Name="PassCard_For_doing"                                 >
+
+                                    </Button>
+                                </StackPanel>
+                            </Popup>
+
+                        </StackPanel>
+
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+            </ListView>
+
+
+
+
+
+        </Grid>
+        <Button x:ConnectionId='2' x:Name="go_to_doing" Margin="181,337,0,0" VerticalAlignment="Top"
+                Background="MediumPurple" Height="28" Width="46" Content="Pass" 
+                 FontSize="12" RenderTransformOrigin="0.696,0.123" FontWeight="Bold"                            />
+
+        <Button x:ConnectionId='3' x:Name="Go_to_done" Background="MediumPurple"
+                FontSize="12" RenderTransformOrigin="0.696,0.123"
+                FontWeight="Bold" Margin="429,337,0,0"  Height="28" Width="46"
+                VerticalAlignment="Top" Content="Pass"                         >
+
+        </Button>
+
+    </Grid>
+</Page>
+

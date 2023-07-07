@@ -1,0 +1,105 @@
+﻿<Window x:Class="SidibanWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SidibanWPF"
+        mc:Ignorable="d"
+        
+        Title="MainWindow"
+        Height="450" 
+        Width="800"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent">
+    <Grid>
+        <Grid Margin ="20" Background="White" >
+            <Grid.Effect>
+                <DropShadowEffect BlurRadius="30"
+                                  ShadowDepth="2"
+                                  Direction="-90"
+                                  Color="Purple">
+
+                </DropShadowEffect>
+            </Grid.Effect>
+            <Rectangle HorizontalAlignment="Center" Height="270"
+                       Margin="0,87,0,0" Stroke="Black" 
+                       VerticalAlignment="Top" Width="168" 
+                       Fill="#FF8A068A" RadiusX="15" RadiusY="15"/>
+
+            <Rectangle HorizontalAlignment="Left" Height="270" 
+                       Margin="51,87,0,0" Stroke="Black"
+                       VerticalAlignment="Top" Width="167"
+                       Fill="#FF8A068A" RadiusX="15" RadiusY="15"/>
+
+
+            <Rectangle HorizontalAlignment="Left" Height="270"
+                       Margin="536,87,0,0" Stroke="Black" 
+                       VerticalAlignment="Top" Width="167" 
+                       Fill="#FF8A068A" RadiusX="15" RadiusY="15"/>
+
+            <Rectangle HorizontalAlignment="Center" Height="34"
+                       VerticalAlignment="Top" Width="760" 
+                       Fill="#FF8A068A" RadiusX="0" RadiusY="4"/>
+
+            <TextBlock HorizontalAlignment="Left" Margin="10,2,0,0"
+                       TextWrapping="Wrap" Text="SIDIBAN" 
+                       VerticalAlignment="Top" 
+                       FontSize="22" FontStyle="Italic"/>
+
+            <StackPanel x:Name="CardStackPanel"
+                        Grid.Column="1"
+                        Grid.ColumnSpan="2"
+                        Visibility="Collapsed" >
+                <TextBox  x:Name="TitleCard" HorizontalAlignment="Left"
+                      Margin="82,147,0,0" TextWrapping="Wrap"
+                       VerticalAlignment="Top" Width="106" Height="21" Text="{Binding add_Card_click}" 
+                      />
+
+
+                <TextBox  x:Name="DescriptionCard" HorizontalAlignment="Left" 
+                      Margin="82,0,0,0" TextWrapping="Wrap"
+                       VerticalAlignment="Top" Width="106" Height="37"
+                       />
+                <Button  HorizontalAlignment="Left" Margin="105,2,0,0" VerticalAlignment="Top"
+                     Background="MediumPurple"  x:Name="add_card" Click="add_card_Click"
+                     Content="SAVE" Width="60" Height="24">
+                    
+                </Button>
+
+            </StackPanel>
+
+            <TextBox  x:Name="TodoCard" HorizontalAlignment="Left" Margin="86,97,0,0" 
+                      TextWrapping="Wrap" Text="    TODO"
+                      VerticalAlignment="Top" Width="90" Height="24" FontSize="16"
+                      BorderThickness="2,2,2,2" BorderBrush="MediumPurple" Background="MediumPurple" />
+
+
+            <TextBox x:Name="DoingCard" HorizontalAlignment="Center" Margin="0,97,0,0" 
+                     TextWrapping="Wrap" Text="   DOING"
+                     VerticalAlignment="Top" Width="90" Height="24" FontSize="16" 
+                     BorderThickness="2,2,2,2" BorderBrush="MediumPurple" Background="MediumPurple"/>
+
+
+            <TextBox x:Name="DoneCard" HorizontalAlignment="Left" Margin="574,97,0,0"
+                     TextWrapping="Wrap" Text="    DONE"
+                     VerticalAlignment="Top" Width="90" Height="24" FontSize="16" 
+                     BorderThickness="2,2,2,2" BorderBrush="MediumPurple" Background="MediumPurple"/>
+
+            
+
+            <Button Content="+ ADD A CARD" Background="MediumPurple" 
+                    HorizontalAlignment="Left" Margin="92,323,0,0" 
+                    VerticalAlignment="Top" Click="Button_Click"/>
+
+        </Grid>
+
+    </Grid>
+
+
+
+
+
+
+</Window>

@@ -1,0 +1,2 @@
+C:\Users\gp.cabral\source\repos\SidibanUWP\SidibanUWP\SidibanUWP.csproj;x64
+C:\Users\gp.cabral\source\repos\SidibanUWP\WpfAndUwp\WpfAndUwp.wapproj;x64
