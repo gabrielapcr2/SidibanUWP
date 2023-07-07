@@ -85,7 +85,7 @@ namespace SidibanWPF
             }
             Process gotoUWP = Process.Start("com.sidibanuwp://");
 
-            this.Close();
+            this.Hide();
 
         }
 

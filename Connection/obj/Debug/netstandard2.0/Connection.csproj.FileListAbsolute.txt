@@ -2,7 +2,6 @@ C:\Users\gp.cabral\source\repos\SidibanUWP\Connection\bin\Debug\netstandard2.0\C
 C:\Users\gp.cabral\source\repos\SidibanUWP\Connection\bin\Debug\netstandard2.0\Connection.dll
 C:\Users\gp.cabral\source\repos\SidibanUWP\Connection\bin\Debug\netstandard2.0\Connection.pdb
 C:\Users\gp.cabral\source\repos\SidibanUWP\Connection\bin\Debug\netstandard2.0\Windows.Foundation.UniversalApiContract.winmd
-C:\Users\gp.cabral\source\repos\SidibanUWP\Connection\obj\Debug\netstandard2.0\Connection.csproj.AssemblyReference.cache
 C:\Users\gp.cabral\source\repos\SidibanUWP\Connection\obj\Debug\netstandard2.0\Connection.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\gp.cabral\source\repos\SidibanUWP\Connection\obj\Debug\netstandard2.0\Connection.AssemblyInfoInputs.cache
 C:\Users\gp.cabral\source\repos\SidibanUWP\Connection\obj\Debug\netstandard2.0\Connection.AssemblyInfo.cs
@@ -10,3 +9,4 @@ C:\Users\gp.cabral\source\repos\SidibanUWP\Connection\obj\Debug\netstandard2.0\C
 C:\Users\gp.cabral\source\repos\SidibanUWP\Connection\obj\Debug\netstandard2.0\Connection.csproj.CopyComplete
 C:\Users\gp.cabral\source\repos\SidibanUWP\Connection\obj\Debug\netstandard2.0\Connection.dll
 C:\Users\gp.cabral\source\repos\SidibanUWP\Connection\obj\Debug\netstandard2.0\Connection.pdb
+C:\Users\gp.cabral\source\repos\SidibanUWP\Connection\obj\Debug\netstandard2.0\Connection.csproj.AssemblyReference.cache

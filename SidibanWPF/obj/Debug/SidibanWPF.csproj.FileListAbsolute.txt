@@ -1,5 +1,4 @@
 C:\Users\gp.cabral\source\repos\SidibanUWP\SidibanWPF\obj\Debug\SidibanWPF.csproj.AssemblyReference.cache
-C:\Users\gp.cabral\source\repos\SidibanUWP\SidibanWPF\obj\Debug\SidibanWPF.csproj.SuggestedBindingRedirects.cache
 C:\Users\gp.cabral\source\repos\SidibanUWP\SidibanWPF\obj\Debug\SidibanWPF.exe.config
 C:\Users\gp.cabral\source\repos\SidibanUWP\SidibanWPF\obj\Debug\MainWindow.g.cs
 C:\Users\gp.cabral\source\repos\SidibanUWP\SidibanWPF\obj\Debug\App.g.cs
@@ -98,3 +97,4 @@ C:\Users\gp.cabral\source\repos\SidibanUWP\SidibanWPF\obj\Debug\SidibanWPF.cspro
 C:\Users\gp.cabral\source\repos\SidibanUWP\SidibanWPF\obj\Debug\SidibanWPF.csproj.CopyComplete
 C:\Users\gp.cabral\source\repos\SidibanUWP\SidibanWPF\obj\Debug\SidibanWPF.exe
 C:\Users\gp.cabral\source\repos\SidibanUWP\SidibanWPF\obj\Debug\SidibanWPF.pdb
+C:\Users\gp.cabral\source\repos\SidibanUWP\SidibanWPF\obj\Debug\SidibanWPF.csproj.SuggestedBindingRedirects.cache
