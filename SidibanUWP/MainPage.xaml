@@ -8,29 +8,28 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:x1="using:System"
     xmlns:entity="using:Connection.Entities"
     mc:Ignorable="d"
-     Width="800" Height="450">
+     Width="1200" Height="700">
 
     <Grid>
         <Grid Margin ="20" Background="White" >
 
-            <Rectangle HorizontalAlignment="Center" Height="270"
-                       Margin="0,87,0,0" Stroke="Black" 
-                       VerticalAlignment="Top" Width="168" 
+            <Rectangle HorizontalAlignment="Center" Height="484" Stroke="Black" 
+                       VerticalAlignment="Center" Width="268" 
                        Fill="#FF8A068A" RadiusX="15" RadiusY="15"/>
 
-            <Rectangle HorizontalAlignment="Left" Height="270" 
-                       Margin="51,87,0,0" Stroke="Black"
-                       VerticalAlignment="Top" Width="167"
+            <Rectangle HorizontalAlignment="Left" Height="484" 
+                       Margin="51,0,0,0" Stroke="Black"
+                       VerticalAlignment="Center" Width="268"
                        Fill="#FF8A068A" RadiusX="15" RadiusY="15"/>
 
 
-            <Rectangle HorizontalAlignment="Left" Height="270"
-                       Margin="536,87,0,0" Stroke="Black" 
-                       VerticalAlignment="Top" Width="167" 
+            <Rectangle HorizontalAlignment="Left" Height="484"
+                       Margin="823,0,0,0" Stroke="Black" 
+                       VerticalAlignment="Center" Width="268" 
                        Fill="#FF8A068A" RadiusX="15" RadiusY="15"/>
 
-            <Rectangle HorizontalAlignment="Center" Height="34"
-                       VerticalAlignment="Top" Width="760" 
+            <Rectangle HorizontalAlignment="Center" Height="38"
+                       VerticalAlignment="Top" Width="1160" 
                        Fill="#FF8A068A" RadiusX="0" RadiusY="4"/>
 
             <TextBlock HorizontalAlignment="Left" Margin="10,2,0,0"
@@ -39,27 +38,27 @@
                        FontSize="22" FontStyle="Italic" Padding="10,3,4,0"/>
 
 
-            <TextBox  x:Name="TodoCard" HorizontalAlignment="Left" Margin="86,97,0,0" 
-                      TextWrapping="Wrap" Text="    TODO"
-                      VerticalAlignment="Top" Width="90" Height="24" FontSize="16"
+            <TextBox  x:Name="TodoCard" HorizontalAlignment="Left" Margin="109,97,0,0" 
+                      TextWrapping="Wrap" Text="        TODO"
+                      VerticalAlignment="Top" Width="122" Height="28" FontSize="16"
                       BorderBrush="MediumPurple" Background="MediumPurple" Padding="3,0,0,0"
                       CornerRadius="1"/>
 
 
             <TextBox x:Name="DoingCard" HorizontalAlignment="Center" Margin="0,97,0,0" 
-                     TextWrapping="Wrap" Text="   DOING"
-                     VerticalAlignment="Top" Width="90" Height="24" FontSize="16" 
+                     TextWrapping="Wrap" Text="      DOING"
+                     VerticalAlignment="Top" Width="116" Height="28" FontSize="16" 
                      BorderThickness="2,2,2,2" BorderBrush="MediumPurple" Background="MediumPurple" Padding="3,0,0,0" CornerRadius="1"/>
 
 
-            <TextBox x:Name="DoneCard" HorizontalAlignment="Left" Margin="574,97,0,0"
-                     TextWrapping="Wrap" Text="    DONE"
-                     VerticalAlignment="Top" Width="90" Height="24" FontSize="16" 
+            <TextBox x:Name="DoneCard" HorizontalAlignment="Left" Margin="895,97,0,0"
+                     TextWrapping="Wrap" Text="        DONE"
+                     VerticalAlignment="Top" Width="131" Height="28" FontSize="16" 
                      BorderThickness="2,2,2,2" BorderBrush="MediumPurple" Background="MediumPurple" Padding="3,0,0,0" CornerRadius="1"/>
 
             <Button  x:Name="back_uwp" Click="back_uwp_Click"
-                     Content="Home" Margin="678,39,0,0" VerticalAlignment="Top"
-                     Background="MediumPurple" Width="72" BorderBrush="Purple" BorderThickness="2"/>
+                     Content="add a new card" Margin="1020,606,0,0" VerticalAlignment="Top"
+                     Background="MediumPurple" Width="118" BorderBrush="Purple" BorderThickness="2"/>
 
             <Grid Grid.Row="1">
                 <Grid.ColumnDefinitions >
@@ -74,30 +73,14 @@
 
 
             </Grid>
-            <ListView  HorizontalAlignment="Left" Margin="90,0,140,60" Height="80"  Width ="86" x:Name="Cards_list" Grid.Row="0" ItemsSource="{x:Bind cards}">
+            <ListView CornerRadius="4"  HorizontalAlignment="Left" Margin="75,20,150,0" Height="330" ItemClick="Cards_list_ItemClick" SelectionChanged="Cards_list_SelectionChanged" IsItemClickEnabled="False" Width ="220" x:Name="Cards_list" Grid.Row="0" ItemsSource="{x:Bind cards}">
 
-                <ListView.ItemTemplate>
-                    <DataTemplate x:DataType="entity:Card">
-                        <StackPanel Orientation="Vertical">
-
-                            <ListViewItem x:Name="Title_card" Content="{x:Bind Title}" Height="10"/>
-                            <ListViewItem x:Name="Description_card" Content="{Binding Description}" Height="40"/>
-                            <Popup x:Name="MyPoupup" IsLightDismissEnabled="False" Height="30" Width="63">
-                                <StackPanel Background="MediumPurple">
-                                    <Button x:Name="DeleteCard" Click="DeleteCard_Click">
-
-                                    </Button>
-                                    <Button x:Name="EditCard" Click="EditCard_Click">
-
-                                    </Button>
-                                    <Button x:Name="PassCard_For_doing" Click="PassCard_For_doing_Click">
-
-                                    </Button>
-                                </StackPanel>
-                            </Popup>
-
+                <ListView.ItemTemplate >
+                    <DataTemplate x:DataType="entity:Card" >
+                        <StackPanel Orientation="Vertical" Background="MediumPurple" BorderBrush="B">
+                            <TextBlock x:Name="Title_card" Text="{x:Bind Title}" HorizontalAlignment="Center" FontSize="20"/>
+                            <TextBlock x:Name="Description_card" Text="Apple Inc. (NASDAQ: AAPL; anteriormente chamado de Apple Computer, Inc.) "  FontSize="12" HorizontalAlignment="Center" TextWrapping="WrapWholeWords"/>
                         </StackPanel>
-
                     </DataTemplate>
                 </ListView.ItemTemplate>
 
@@ -108,13 +91,13 @@
 
 
         </Grid>
-        <Button x:Name="go_to_doing" Margin="181,337,0,0" VerticalAlignment="Top"
+        <Button x:Name="go_to_doing" Margin="243,536,0,0" VerticalAlignment="Top"
                 Background="MediumPurple" Height="28" Width="46" Content="Pass" 
                  FontSize="12" RenderTransformOrigin="0.696,0.123" FontWeight="Bold" Click="go_to_doing_Click_1"/>
 
         <Button x:Name="Go_to_done" Background="MediumPurple"
                 FontSize="12" RenderTransformOrigin="0.696,0.123"
-                FontWeight="Bold" Margin="429,337,0,0"  Height="28" Width="46"
+                FontWeight="Bold" Margin="676,550,0,0"  Height="28" Width="46"
                 VerticalAlignment="Top" Content="Pass" Click="Go_to_done_Click">
 
         </Button>

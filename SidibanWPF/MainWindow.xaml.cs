@@ -47,8 +47,17 @@ namespace SidibanWPF
         {
             if (CardStackPanel.Visibility == Visibility.Collapsed)
             {
+
                 CardStackPanel.Visibility = Visibility.Visible;
             }
+            //if(title_card.Visibility = Visibility.Collapsed)
+            //{
+            //    title_card.Visibility = Visibility.Visible;
+            //}
+            //if (description_card.Visibility = Visibility.Collapsed)
+            //{
+            //    description_card.Visibility = Visibility.Visible;
+            //}
         }
 
         private async void add_card_Click(object sender, RoutedEventArgs e)
@@ -89,6 +98,13 @@ namespace SidibanWPF
 
         }
 
+     
 
+        private void edit_cards_Click(object sender, RoutedEventArgs e)
+        {
+            Process gotoUWP = Process.Start("com.sidibanuwp://");
+
+            
+        }
     }
 }

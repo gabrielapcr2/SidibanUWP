@@ -7,8 +7,8 @@
         mc:Ignorable="d"
         
         Title="MainWindow"
-        Height="450" 
-        Width="800"
+        Height="700" 
+        Width="1200"
         WindowStartupLocation="CenterScreen"
         WindowStyle="None"
         AllowsTransparency="True"
@@ -23,24 +23,24 @@
 
                 </DropShadowEffect>
             </Grid.Effect>
-            <Rectangle HorizontalAlignment="Center" Height="270"
-                       Margin="0,87,0,0" Stroke="Black" 
-                       VerticalAlignment="Top" Width="168" 
+            <Rectangle HorizontalAlignment="Center" Height="470"
+                       Margin="0,121,0,0" Stroke="Black" 
+                       VerticalAlignment="Top" Width="272" 
                        Fill="#FF8A068A" RadiusX="15" RadiusY="15"/>
 
-            <Rectangle HorizontalAlignment="Left" Height="270" 
-                       Margin="51,87,0,0" Stroke="Black"
-                       VerticalAlignment="Top" Width="167"
+            <Rectangle HorizontalAlignment="Left" Height="470" 
+                       Margin="51,121,0,0" Stroke="Black"
+                       VerticalAlignment="Top" Width="272"
                        Fill="#FF8A068A" RadiusX="15" RadiusY="15"/>
 
 
-            <Rectangle HorizontalAlignment="Left" Height="270"
-                       Margin="536,87,0,0" Stroke="Black" 
-                       VerticalAlignment="Top" Width="167" 
+            <Rectangle HorizontalAlignment="Left" Height="470"
+                       Margin="849,121,0,0" Stroke="Black" 
+                       VerticalAlignment="Top" Width="272" 
                        Fill="#FF8A068A" RadiusX="15" RadiusY="15"/>
 
             <Rectangle HorizontalAlignment="Center" Height="34"
-                       VerticalAlignment="Top" Width="760" 
+                       VerticalAlignment="Top" Width="1160" 
                        Fill="#FF8A068A" RadiusX="0" RadiusY="4"/>
 
             <TextBlock HorizontalAlignment="Left" Margin="10,2,0,0"
@@ -52,46 +52,73 @@
                         Grid.Column="1"
                         Grid.ColumnSpan="2"
                         Visibility="Collapsed" >
+                
+
                 <TextBox  x:Name="TitleCard" HorizontalAlignment="Left"
-                      Margin="82,147,0,0" TextWrapping="Wrap"
+                      Margin="140,200,0,0" TextWrapping="Wrap"
                        VerticalAlignment="Top" Width="106" Height="21" Text="{Binding add_Card_click}" 
                       />
 
 
                 <TextBox  x:Name="DescriptionCard" HorizontalAlignment="Left" 
-                      Margin="82,0,0,0" TextWrapping="Wrap"
+                      Margin="140,0,0,0" TextWrapping="Wrap"
                        VerticalAlignment="Top" Width="106" Height="37"
                        />
-                <Button  HorizontalAlignment="Left" Margin="105,2,0,0" VerticalAlignment="Top"
+                <Button  HorizontalAlignment="Left" Margin="160,2,0,0" VerticalAlignment="Top"
                      Background="MediumPurple"  x:Name="add_card" Click="add_card_Click"
                      Content="SAVE" Width="60" Height="24">
-                    
+
                 </Button>
+                
+
 
             </StackPanel>
 
-            <TextBox  x:Name="TodoCard" HorizontalAlignment="Left" Margin="86,97,0,0" 
-                      TextWrapping="Wrap" Text="    TODO"
-                      VerticalAlignment="Top" Width="90" Height="24" FontSize="16"
+            <TextBox  x:Name="TodoCard" HorizontalAlignment="Left" Margin="116,139,0,0" 
+                      TextWrapping="Wrap" Text="      TODO"
+                      VerticalAlignment="Top" Width="132" Height="28" FontSize="18"
                       BorderThickness="2,2,2,2" BorderBrush="MediumPurple" Background="MediumPurple" />
 
 
-            <TextBox x:Name="DoingCard" HorizontalAlignment="Center" Margin="0,97,0,0" 
-                     TextWrapping="Wrap" Text="   DOING"
-                     VerticalAlignment="Top" Width="90" Height="24" FontSize="16" 
+            <TextBox x:Name="DoingCard" HorizontalAlignment="Center" Margin="0,139,0,0" 
+                     TextWrapping="Wrap" Text="    DOING"
+                     VerticalAlignment="Top" Width="108" Height="28" FontSize="18" 
                      BorderThickness="2,2,2,2" BorderBrush="MediumPurple" Background="MediumPurple"/>
 
 
-            <TextBox x:Name="DoneCard" HorizontalAlignment="Left" Margin="574,97,0,0"
-                     TextWrapping="Wrap" Text="    DONE"
-                     VerticalAlignment="Top" Width="90" Height="24" FontSize="16" 
+            <TextBox x:Name="DoneCard" HorizontalAlignment="Left" Margin="920,139,0,0"
+                     TextWrapping="Wrap" Text="      DONE"
+                     VerticalAlignment="Top" Width="116" Height="28" FontSize="18" 
                      BorderThickness="2,2,2,2" BorderBrush="MediumPurple" Background="MediumPurple"/>
 
-            
+
 
             <Button Content="+ ADD A CARD" Background="MediumPurple" 
-                    HorizontalAlignment="Left" Margin="92,323,0,0" 
-                    VerticalAlignment="Top" Click="Button_Click"/>
+                    HorizontalAlignment="Left" Margin="118,531,0,0" 
+                    VerticalAlignment="Top" Click="Button_Click" Height="30" Width="130" FontSize="18"/>
+
+            <Button Content="Edit CARDS"
+                    HorizontalAlignment="Left" 
+                    Margin="1062,39,0,0"
+                    VerticalAlignment="Top" 
+                    Height="48" Width="88"
+                    Background="MediumPurple"
+                    x:Name="edit_cards" 
+                    Click="edit_cards_Click" FontSize="14"/>
+            
+            <TextBlock HorizontalAlignment="Left"
+                       Margin="62,202,0,0"
+                       TextWrapping="Wrap"
+                       Text="TITLE:"
+                       VerticalAlignment="Top"
+                       x:Name="title_card"
+                       Visibility="Collapsed"/>
+            
+            <TextBlock HorizontalAlignment="Left" x:Name="description_card" 
+                       Margin="62,223,0,0"
+                       TextWrapping="Wrap"
+                       Text="DESCRIPTION:"
+                       VerticalAlignment="Top" Visibility="Collapsed"/>
 
         </Grid>
 

@@ -93,5 +93,18 @@ namespace SidibanUWP
         {
 
         }
+
+        private void Cards_list_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+        }
+
+        private void Cards_list_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ListView listView = (ListView)sender;
+            Card selectedCard = listView.SelectedItem as Card;
+            selectedCard.Description = string.Empty;
+            selectedCard.Title = string.Empty;
+        }
     }
 }
