@@ -77,6 +77,7 @@ namespace SidibanWPF
                 Debug.WriteLine(ex);
             }
             Process gotoUWP = Process.Start("com.sidibanuwp://");
+            this.Hide();
 
 
         }
@@ -84,6 +85,7 @@ namespace SidibanWPF
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             Process gotoUWP = Process.Start("com.sidibanuwp://");
+            this.Hide();
         }
     }
 }

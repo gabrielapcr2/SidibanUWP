@@ -128,5 +128,10 @@ namespace SidibanUWP
             dataBaseContext.AddCard(card);
             Frame.Navigate(this.GetType());
         }
+
+        private void Back_Click(object sender, RoutedEventArgs e)
+        {
+            var gotoWPF = Launcher.LaunchUriAsync(new Uri("com.sidibanwpf://"));
+        }
     }
 }

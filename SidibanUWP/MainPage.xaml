@@ -468,5 +468,17 @@
                 </StackPanel>
             </Grid>
         </Grid>
+        <Button  x:Name ="Back"
+                 Content="Back"
+                 Margin="25,0,0,0"
+                 Click="Back_Click"
+                 RenderTransformOrigin="0.262,-0.134"
+                 Background="MediumPurple" 
+                 Width="65"
+                 Height="40"
+                 CornerRadius="7"
+                 Foreground="Black"
+                 FontSize="22"
+                 />
     </Grid>
 </Page>
