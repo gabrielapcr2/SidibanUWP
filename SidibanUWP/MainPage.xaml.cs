@@ -1,5 +1,6 @@
 ﻿using Connection.DataBase;
 using Connection.Entities;
+using Connection.Enumerates;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -31,15 +32,26 @@ namespace SidibanUWP
     {
         DataBaseContext dataBaseContext;
 
-        public ObservableCollection<Card> cards;
+        public ObservableCollection<Card> todoCardsGroup;
+        public ObservableCollection<Card> doingCardsGroup;
+        public ObservableCollection<Card> doneCardsGroup;
         public MainPage()
         {
             dataBaseContext = new DataBaseContext(Path.Combine(ApplicationData.Current.LocalFolder.Path, "users.db"));
-            cards = new ObservableCollection<Card>(dataBaseContext.GetCard());
-
+            UpdateLists();
             this.InitializeComponent();
 
         }
+
+        private void UpdateLists()
+        {
+            todoCardsGroup = new ObservableCollection<Card>(dataBaseContext.GetCard().Where(card => card.group == Connection.Enumerates.EnumCardGroups.TODO).ToList());
+            doingCardsGroup = new ObservableCollection<Card>(dataBaseContext.GetCard().Where(card => card.group == Connection.Enumerates.EnumCardGroups.DOING).ToList());
+            doneCardsGroup = new ObservableCollection<Card>(dataBaseContext.GetCard().Where(card => card.group == Connection.Enumerates.EnumCardGroups.DONE).ToList());
+            doneCardsGroup = new ObservableCollection<Card>(doneCardsGroup.Reverse().ToList());
+            doingCardsGroup = new ObservableCollection<Card>(doingCardsGroup.Reverse().ToList());
+        }
+
         private async void back_uwp_Click(object sender, RoutedEventArgs e)
         {
             bool retLauncher = await Launcher.LaunchUriAsync(new Uri("com.sidibanwpf://"));
@@ -52,6 +64,31 @@ namespace SidibanUWP
             Card selectedCard = listView.SelectedItem as Card;
             selectedCard.Description = string.Empty;
             selectedCard.Title = string.Empty;
+        }
+
+        private void RemoveButton_Click(object sender, RoutedEventArgs e)
+        {
+            Button button = (Button)sender;
+            Card card = button.DataContext as Card;
+            dataBaseContext.DeleteCard(card);
+            Frame.Navigate(this.GetType());
+        }
+
+        private void MoveButton_Click(object sender, RoutedEventArgs e)
+        {
+            Button button = (Button)sender;
+            Card card = button.DataContext as Card;
+            dataBaseContext.DeleteCard(card);
+            if (card.group == EnumCardGroups.TODO)
+            {
+                card.group = EnumCardGroups.DOING;
+            }
+            else
+            {
+                card.group = EnumCardGroups.DONE;
+            }
+            dataBaseContext.AddCard(card);
+            Frame.Navigate(this.GetType());
         }
     }
 }
