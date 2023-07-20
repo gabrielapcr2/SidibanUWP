@@ -35,12 +35,20 @@ namespace SidibanUWP
         public ObservableCollection<Card> todoCardsGroup;
         public ObservableCollection<Card> doingCardsGroup;
         public ObservableCollection<Card> doneCardsGroup;
+        public Card lastEditableCard;
         public MainPage()
         {
             dataBaseContext = new DataBaseContext(Path.Combine(ApplicationData.Current.LocalFolder.Path, "users.db"));
             UpdateLists();
             this.InitializeComponent();
+            UpdateEmptyTextBlockVisibility();
+        }
 
+        private void UpdateEmptyTextBlockVisibility()
+        {
+            emptyTodoText.Visibility = todoCardsGroup.Count != 0 ? Visibility.Collapsed : Visibility.Visible;
+            emptyDoingText.Visibility = doingCardsGroup.Count != 0 ? Visibility.Collapsed : Visibility.Visible;
+            emptyDoneText.Visibility = doneCardsGroup.Count != 0 ? Visibility.Collapsed : Visibility.Visible;
         }
 
         private void UpdateLists()
@@ -50,6 +58,7 @@ namespace SidibanUWP
             doneCardsGroup = new ObservableCollection<Card>(dataBaseContext.GetCard().Where(card => card.group == Connection.Enumerates.EnumCardGroups.DONE).ToList());
             doneCardsGroup = new ObservableCollection<Card>(doneCardsGroup.Reverse().ToList());
             doingCardsGroup = new ObservableCollection<Card>(doingCardsGroup.Reverse().ToList());
+            todoCardsGroup = new ObservableCollection<Card>(todoCardsGroup.Reverse().ToList());
         }
 
         private async void back_uwp_Click(object sender, RoutedEventArgs e)
@@ -87,6 +96,35 @@ namespace SidibanUWP
             {
                 card.group = EnumCardGroups.DONE;
             }
+            dataBaseContext.AddCard(card);
+            Frame.Navigate(this.GetType());
+        }
+
+        private void CardGroupListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            lastEditableCard = (Card)((ListView)sender).SelectedItem;
+            editableDescription.Text = lastEditableCard.Description;
+            editableTitle.Text = lastEditableCard.Title;
+            popupView.Visibility = Visibility.Visible;
+        }
+
+        private void ButtonEdit_Click(object sender, RoutedEventArgs e)
+        {
+            saveButton.IsEnabled = true;
+            editableDescription.IsEnabled = true;
+            editableTitle.IsEnabled = true;
+            ((Button)sender).IsEnabled = false;
+        }
+
+        private void ButtonCancel_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(this.GetType());
+        }
+
+        private void saveButton_Click(object sender, RoutedEventArgs e)
+        {
+            Card card = new Card() { Title = editableTitle.Text, Description = editableDescription.Text, group = lastEditableCard.group };
+            dataBaseContext.DeleteCard(lastEditableCard);
             dataBaseContext.AddCard(card);
             Frame.Navigate(this.GetType());
         }

@@ -82,6 +82,7 @@
                       Margin="5" 
                       HorizontalAlignment="Center"
                       HorizontalContentAlignment="Center"
+                      SelectionChanged="CardGroupListView_SelectionChanged"
                       ItemsSource="{x:Bind todoCardsGroup}" >
                 <ListView.ItemTemplate >
                     <DataTemplate x:DataType="entity:Card" >
@@ -163,6 +164,18 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+            <TextBlock x:Name="emptyTodoText"
+                       Text="Empty"
+                       Grid.Column="0"
+                       Grid.Row="1"
+                       Foreground="Black"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       FontSize="30"
+                       FontFamily="Gabriola"
+                       FontStyle="Normal"
+                       Visibility="Visible"
+                       />
             <ListView x:Name="doingCardGroupListView"
                       Grid.Row="1" 
                       Width="350"
@@ -174,6 +187,7 @@
                       Margin="5" 
                       HorizontalAlignment="Center"
                       HorizontalContentAlignment="Center"
+                      SelectionChanged="CardGroupListView_SelectionChanged"
                       ItemsSource="{x:Bind doingCardsGroup}" >
                 <ListView.ItemTemplate >
                     <DataTemplate x:DataType="entity:Card" >
@@ -255,6 +269,18 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+            <TextBlock x:Name="emptyDoingText"
+                       Text="Empty"
+                       Grid.Column="1"
+                       Grid.Row="1"
+                       Foreground="Black"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       FontSize="30"
+                       FontFamily="Gabriola"
+                       FontStyle="Normal"
+                       Visibility="Visible"
+                       />
             <ListView x:Name="doneCardGroupListView"
                       Grid.Row="1" 
                       Width="350"
@@ -266,6 +292,7 @@
                       Margin="5" 
                       HorizontalAlignment="Center"
                       HorizontalContentAlignment="Center"
+                      SelectionChanged="CardGroupListView_SelectionChanged"
                       ItemsSource="{x:Bind doneCardsGroup}" >
                 <ListView.ItemTemplate >
                     <DataTemplate x:DataType="entity:Card" >
@@ -339,7 +366,107 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+            <TextBlock x:Name="emptyDoneText"
+                       Text="Empty"
+                       Grid.Column="2"
+                       Grid.Row="1"
+                       Foreground="Black"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       FontSize="30"
+                       FontFamily="Gabriola"
+                       FontStyle="Normal"
+                       Visibility="Visible"
+                       />
+
+        </Grid>
+        <Grid x:Name="popupView"
+              Background="WhiteSmoke"
+              Visibility="Collapsed"
+              Grid.Row="1">
+            <Grid Background="MediumPurple"
+                  Height="500"
+                  Width="700"
+                  CornerRadius="40"
+                  HorizontalAlignment="Center"
+                  VerticalAlignment="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="90"/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition Height="90"/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="Edit Card"
+                           Grid.Row="0"
+                           FontSize="55"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           Foreground="Black"/>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="200"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="Title :"
+                               Grid.Column="0" 
+                               FontSize="40"
+                               Foreground="Black"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"/>
+                    <TextBox x:Name="editableTitle"
+                             FontSize="20"
+                             ScrollViewer.IsScrollInertiaEnabled="True"
+                             TextWrapping="Wrap"
+                             Grid.Column="1"
+                             IsEnabled="False"
+                             CornerRadius="10"
+                             Height="100"
+                             Margin="0,0,10,0"
+                             VerticalAlignment="Center"/>
+                </Grid>
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="200"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="Description :"
+                               Grid.Column="0"
+                               FontSize="32"
+                               Foreground="Black"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"/>
+                    <TextBox x:Name="editableDescription"
+                             FontSize="20"
+                             ScrollViewer.IsScrollInertiaEnabled="True"
+                             TextWrapping="Wrap"
+                             IsEnabled="False"
+                             Grid.Column="1"
+                             Margin="0,0,10,0"
+                             CornerRadius="10"
+                             Height="100"/>
+                </Grid>
+                <StackPanel Grid.Row="3"
+                            Orientation="Horizontal"
+                            HorizontalAlignment="Center">
+                    <Button Margin="0,0,10,0"
+                            Content="Edit"
+                            CornerRadius="5"
+                            FontSize="20"
+                            Click="ButtonEdit_Click"/>
+                    <Button HorizontalAlignment="Center"
+                            Content="Cancel"
+                            CornerRadius="5"
+                            FontSize="20"
+                            Click="ButtonCancel_Click"/>
+                    <Button x:Name="saveButton"
+                            Margin="10,0,0,0"
+                            Content="Save"
+                            CornerRadius="5"
+                            FontSize="20"
+                            IsEnabled="False"
+                            Click="saveButton_Click"/>
+                </StackPanel>
+            </Grid>
         </Grid>
     </Grid>
 </Page>
-   

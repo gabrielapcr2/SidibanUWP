@@ -44,19 +44,32 @@ namespace SidibanWPF
 
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
-            Card cards = new Card
+            Card newCard = new Card
             {
                 Title = TitleCard.Text,
                 Description = DescriptionCard.Text,
                 group = EnumCardGroups.TODO
 
             };
-            Cards_moviment.Add(cards);
+
+            bool cardAlreadyExist = dataBaseContext.GetCard().Where(card => card.Title == newCard.Title).Count() > 0;
+
+            if (newCard.Title.Trim() == String.Empty || newCard.Description.Trim() == String.Empty || cardAlreadyExist)
+            {
+                string messageBoxText = "You need to put a valid title and description!";
+                string caption = "Could not save";
+                MessageBoxButton button = MessageBoxButton.OK;
+                MessageBoxImage icon = MessageBoxImage.Warning;
+                MessageBoxResult result;
+                result = MessageBox.Show(messageBoxText, caption, button, icon, MessageBoxResult.Yes);
+                return;
+            }
+            Cards_moviment.Add(newCard);
             try
             {
                 if (dataBaseContext != null)
                 {
-                    await dataBaseContext.AddCard(cards);
+                    await dataBaseContext.AddCard(newCard);
                 }
             }
             catch (Exception ex)
@@ -65,7 +78,7 @@ namespace SidibanWPF
             }
             Process gotoUWP = Process.Start("com.sidibanuwp://");
 
-            
+
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
