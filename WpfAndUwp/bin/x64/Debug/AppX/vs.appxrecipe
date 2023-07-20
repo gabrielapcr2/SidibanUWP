@@ -31,7 +31,7 @@
     <AppXManifest Include="C:\Users\gp.cabral\source\repos\SidibanUWP\WpfAndUwp\bin\x64\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2023-07-17T17:14:22.574</Modified>
+      <Modified>2023-07-20T01:17:58.134</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
@@ -71,11 +71,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\gp.cabral\source\repos\SidibanUWP\WpfAndUwp\bin\x64\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2023-07-07T19:30:59.253</Modified>
+      <Modified>2023-07-19T23:52:26.034</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\gp.cabral\source\repos\SidibanUWP\Connection\bin\Debug\netstandard2.0\Connection.dll">
       <PackagePath>SidibanWPF\Connection.dll</PackagePath>
-      <Modified>2023-07-10T13:17:36.046</Modified>
+      <Modified>2023-07-20T01:07:32.029</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\gp.cabral\source\repos\SidibanUWP\packages\ControlzEx.4.4.0\lib\net462\ControlzEx.dll">
       <PackagePath>SidibanWPF\ControlzEx.dll</PackagePath>
@@ -247,7 +247,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\gp.cabral\source\repos\SidibanUWP\SidibanWPF\bin\Debug\SidibanWPF.exe">
       <PackagePath>SidibanWPF\SidibanWPF.exe</PackagePath>
-      <Modified>2023-07-14T16:23:38.327</Modified>
+      <Modified>2023-07-20T01:17:49.869</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\gp.cabral\source\repos\SidibanUWP\SidibanWPF\bin\Debug\SidibanWPF.exe.config">
       <PackagePath>SidibanWPF\SidibanWPF.exe.config</PackagePath>
@@ -255,7 +255,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\gp.cabral\source\repos\SidibanUWP\SidibanUWP\bin\x64\Debug\SidibanUWP.exe">
       <PackagePath>entrypoint\SidibanUWP.exe</PackagePath>
-      <Modified>2023-07-17T17:14:20.483</Modified>
+      <Modified>2023-07-20T01:17:56.133</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\gp.cabral\.nuget\packages\microsoft.bcl.asyncinterfaces\1.1.1\lib\netstandard2.0\Microsoft.Bcl.AsyncInterfaces.dll">
       <PackagePath>Microsoft.Bcl.AsyncInterfaces.dll</PackagePath>
@@ -379,7 +379,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\gp.cabral\source\repos\SidibanUWP\Connection\bin\Debug\netstandard2.0\Connection.dll">
       <PackagePath>Connection.dll</PackagePath>
-      <Modified>2023-07-10T13:17:36.046</Modified>
+      <Modified>2023-07-20T01:07:32.029</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\bin\10.0.19041.0\XamlCompiler\Microsoft.UI.Xaml.Markup.winmd">
       <PackagePath>Microsoft.UI.Xaml.Markup.winmd</PackagePath>
@@ -423,15 +423,15 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\gp.cabral\source\repos\SidibanUWP\SidibanUWP\bin\x64\Debug\SidibanUWP.xr.xml">
       <PackagePath>SidibanUWP.xr.xml</PackagePath>
-      <Modified>2023-07-14T17:01:46.641</Modified>
+      <Modified>2023-07-20T00:39:07.947</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\gp.cabral\source\repos\SidibanUWP\SidibanUWP\bin\x64\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2023-07-17T17:14:20.380</Modified>
+      <Modified>2023-07-20T01:17:56.037</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\gp.cabral\source\repos\SidibanUWP\SidibanUWP\bin\x64\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2023-07-17T17:14:20.380</Modified>
+      <Modified>2023-07-20T01:17:56.037</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.19041.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -439,7 +439,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\gp.cabral\source\repos\SidibanUWP\SidibanUWP\bin\x64\Debug\Core\SidibanUWP.exe">
       <PackagePath>SidibanUWP.exe</PackagePath>
-      <Modified>2023-07-17T17:14:21.654</Modified>
+      <Modified>2023-07-20T01:17:57.270</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

@@ -39,66 +39,13 @@ namespace SidibanUWP
 
             this.InitializeComponent();
 
-            //Cards_list.ItemsSource = cards;
         }
-
-
-        //public void initalizeCard()
-        //{
-        //    CardListView.ItemsSource = cards;
-        //}
         private async void back_uwp_Click(object sender, RoutedEventArgs e)
         {
             bool retLauncher = await Launcher.LaunchUriAsync(new Uri("com.sidibanwpf://"));
             if (retLauncher)
                 Application.Current.Exit();
         }
-
-
-        private void Go_to_done_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void go_to_doing_Click_1(object sender, RoutedEventArgs e)
-        {
-            //if(Card.group.Equals(0))
-            //{
-
-            //}
-        }
-
-        private void DeleteCard_Click(object sender, RoutedEventArgs e)
-        {
-            //Cards_list.ItemsSource = delete;
-            //try
-            //{
-            //    if (dataBaseContext != null)
-            //    {
-            //        await dataBaseContext.DeleteCard(DeleteCard);
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    Debug.WriteLine(ex);
-            //}
-        }
-
-        private void EditCard_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void PassCard_For_doing_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Cards_list_ItemClick(object sender, ItemClickEventArgs e)
-        {
-
-        }
-
         private void Cards_list_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             ListView listView = (ListView)sender;

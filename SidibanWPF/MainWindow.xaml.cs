@@ -43,36 +43,72 @@ namespace SidibanWPF
         }
 
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        //private void Button_Click(object sender, RoutedEventArgs e)
+        //{
+        //    if (CardStackPanel.Visibility == Visibility.Collapsed)
+        //    {
+
+        //        CardStackPanel.Visibility = Visibility.Visible;
+        //    }
+        //    //if(title_card.Visibility = Visibility.Collapsed)
+        //    //{
+        //    //    title_card.Visibility = Visibility.Visible;
+        //    //}
+        //    //if (description_card.Visibility = Visibility.Collapsed)
+        //    //{
+        //    //    description_card.Visibility = Visibility.Visible;
+        //    //}
+        //}
+
+        //private async void add_card_Click(object sender, RoutedEventArgs e)
+        //{
+        //    //string errors = CardValidation.ValidateCard(TitleCard.Text, DescriptionCard.Text);
+
+        //    //if ( errors != "")
+        //    //{
+        //    //    ShowError(errors); return;
+        //    //}
+
+
+        //    //CardGroup cardGroup = new CardGroup("TODO");
+
+
+        //    Card cards = new Card
+        //    {
+        //        Title = TitleCard.Text,
+        //        Description = DescriptionCard.Text,
+        //        group = 0
+
+        //    };
+        //    Cards_moviment.Add(cards);
+        //    try
+        //    {
+        //        if (dataBaseContext != null)
+        //        {
+        //            await dataBaseContext.AddCard(cards);
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Debug.WriteLine(ex);
+        //    }
+        //    Process gotoUWP = Process.Start("com.sidibanuwp://");
+
+        //    this.Hide();
+
+        //}
+
+     
+
+        //private void edit_cards_Click(object sender, RoutedEventArgs e)
+        //{
+        //    Process gotoUWP = Process.Start("com.sidibanuwp://");
+
+            
+        //}
+
+        private async void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (CardStackPanel.Visibility == Visibility.Collapsed)
-            {
-
-                CardStackPanel.Visibility = Visibility.Visible;
-            }
-            //if(title_card.Visibility = Visibility.Collapsed)
-            //{
-            //    title_card.Visibility = Visibility.Visible;
-            //}
-            //if (description_card.Visibility = Visibility.Collapsed)
-            //{
-            //    description_card.Visibility = Visibility.Visible;
-            //}
-        }
-
-        private async void add_card_Click(object sender, RoutedEventArgs e)
-        {
-            //string errors = CardValidation.ValidateCard(TitleCard.Text, DescriptionCard.Text);
-
-            //if ( errors != "")
-            //{
-            //    ShowError(errors); return;
-            //}
-
-
-            //CardGroup cardGroup = new CardGroup("TODO");
-
-
             Card cards = new Card
             {
                 Title = TitleCard.Text,
@@ -94,17 +130,12 @@ namespace SidibanWPF
             }
             Process gotoUWP = Process.Start("com.sidibanuwp://");
 
-            this.Hide();
-
+            
         }
 
-     
-
-        private void edit_cards_Click(object sender, RoutedEventArgs e)
+        private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             Process gotoUWP = Process.Start("com.sidibanuwp://");
-
-            
         }
     }
 }
